@@ -1,0 +1,45 @@
+.navbar{
+    display: flex;
+    padding: 3.2vh 0vw;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color:#08002a; */
+    background: linear-gradient(135deg, #08002a 40%, #08005e 60%);
+
+}
+
+.icon-text{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: 550;
+}
+
+.navbar .logo{
+    margin-left: 2vw;
+    width: 5vw;
+
+}
+
+.main-title{
+    font-size: 5vh;
+    background: linear-gradient(135deg, #ec01d8 40%, #feb47b 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* -webkit-text-stroke: #fff 0.3px; */
+    background-clip: text;
+}
+
+.about-button{
+    padding: 1.5vh 1.5vw;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition:  0.1s ease-in-out;
+    margin-right: 3vw;
+    border: #fff solid 2px;
+}
+
