@@ -2,6 +2,13 @@ import React, {useState, useEffect} from 'react'
 import "../styles/Home.css"
 import Navbar from './Navbar'
 import { IoIosClose } from "react-icons/io";
+import { FaUpload } from "react-icons/fa";
+import { FcLike } from "react-icons/fc";
+import { FaRegComment } from "react-icons/fa";
+import { FiSend } from "react-icons/fi";
+import { FaRegBookmark } from "react-icons/fa6";
+import { BsThreeDotsVertical } from "react-icons/bs";
+import { FaInstagram } from "react-icons/fa";
 import AOS from 'aos';
 import axios from 'axios';
 import 'aos/dist/aos.css';
@@ -9,7 +16,7 @@ import TypingText from './TypingText';
   
 const Home = () => {
   useEffect(() => {
-    AOS.init({ duration: 2500 }); // Initialize AOS and set the duration for animations
+    AOS.init({ duration: 2000 }); // Initialize AOS and set the duration for animations
   }, []);
     const [image, setImage] = useState(null);
     const [description, setDescription] = useState('');
@@ -54,16 +61,15 @@ const Home = () => {
   
       try
       {
-        const response=await axios.post("http://127.0.0.1:8000/get_caption",formData,{
-        headers:{
-          'content-type':'multipart/form-data'
-        }
-      })
-        setCaption(response.data['caption'])
-        setSuggestions(response.data['suggestions'])
-  
-        const data = await response.json();
-        setCaption(data.caption);
+      //   const response=await axios.post("http://127.0.0.1:8000/get_caption",formData,{
+      //   headers:{
+      //     'content-type':'multipart/form-data'
+      //   }
+      // })
+      //   const data = await response.json();
+      //   setCaption(response.data['caption'])
+      //   setSuggestions(response.data['suggestions'])
+        setCaption("Scene of beauty");
       } catch (error) {
         console.error('Error generating caption:', error);
         alert('Failed to generate caption. Please try again.');
@@ -79,8 +85,24 @@ const Home = () => {
         <div className='tile-container'> 
           <div className='text-container' data-aos='fade-right'>
             Express yourself with beautiful caption
+            <div className='smaller-text' style={{
+              marginTop:'20px'
+            }}>
+              Create a <div style={{display:'inline-block', 
+                background: 'linear-gradient(90deg, #ff00ff, #0000ff)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}>captivating</div> and <div style={{display:'inline-block', 
+                background: 'linear-gradient(90deg, #ff00ff, #0000ff)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+                }}>mesmerizing</div> caption for your next perfect post 
+            </div>
+            <div className='smaller-text'>
+            in only a matter of seconds!!
+            </div>
           </div>
-          <div className="instagram-caption-generator" data-aos='fade-left'>
+          {!caption && <div className="instagram-caption-generator" data-aos='fade-up'>
           
             {image ? (
               <>
@@ -95,7 +117,8 @@ const Home = () => {
                 onDragOver={handleDragOver}
               >
                 <div>
-                  <p>Drag and drop an image here or</p>
+                  <FaUpload className='faupload'/>
+                  <p>DRAG AND DROP OR</p>
                   <label className="upload-button">
                     <input type="file" onChange={handleFileChange} accept="image/png, image/jpeg" />
                     Upload Image
@@ -114,15 +137,49 @@ const Home = () => {
           <button onClick={handleGenerateCaption} disabled={isGenerating}>
             {isGenerating ? 'Generating...' : 'Generate Caption'}
           </button>
-          {caption && (
-            <div className="instagram-post">
-              <img src={URL.createObjectURL(image)} alt="Instagram Post" />
-              <p>{caption}</p>
-            </div>
-          )}
+          
           </div>
+          }
+          {caption && (
+            <div className='ig-post-container'>
+              <div className='post-title'>Here's your post : </div>
+              <div className="ig-post">
+              <div className='post-header'>
+                <div className='profile-pic'>
+                  <a href='https://www.instagram.com/' target='_blank' >
+                    <FaInstagram />
+                  </a>
+                </div>
+                <div className='three-dots'>
+                  <BsThreeDotsVertical/>
+                </div>
+              </div>
+              <div className='ig-image-container'>
+                <img src={URL.createObjectURL(image)}  className='img' alt="Insta Post" />
+              </div>
+              <div className='symbols'>
+                <div>
+                  <div className='like'>
+                    <FcLike/>
+                  </div>
+                  <div className='comment'>
+                    <FaRegComment/>
+                  </div>
+                  <div className='send'>
+                    <FiSend/>
+                  </div> 
+                </div>
+                <div className='bookmark'>
+                  <FaRegBookmark/>
+                </div>
+              </div>
+              <div className='ig-caption'>{caption}</div>
+            </div>
+            </div>
+        )}
         </div>
-        <div className='tile-container'></div>
+        
+        {/* <div className='tile-container'></div> */}
       </div>
       </>
     );

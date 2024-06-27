@@ -1,11 +1,16 @@
 .navbar{
     display: flex;
-    padding: 3.2vh 0vw;
+    padding: 2.5vh 0vw;
     justify-content: space-between;
     align-items: center;
-    /* background-color:#08002a; */
-    background: linear-gradient(135deg, #08002a 40%, #08005e 60%);
-
+    background-color:rgb(0, 0, 0, 0.92);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    /* border-bottom: grey 1px solid; */
+    box-shadow: grey 0px 0px 10px;
 }
 
 .icon-text{
@@ -24,7 +29,7 @@
 
 .main-title{
     font-size: 5vh;
-    background: linear-gradient(135deg, #ec01d8 40%, #feb47b 60%);
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     /* -webkit-text-stroke: #fff 0.3px; */
@@ -40,6 +45,12 @@
     cursor: pointer;
     transition:  0.1s ease-in-out;
     margin-right: 3vw;
-    border: #fff solid 2px;
+    border: #2000f3 solid 2px;
+    box-shadow: 0px 0px 10px 0px #2000f3;
 }
 
+.about-button:hover{
+    border: #ec01d8 solid 2px ;
+    transition:  0.3s ease-in-out;
+    box-shadow: 0px 0px 10px 0px #ec01d8;
+}

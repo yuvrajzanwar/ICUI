@@ -5,7 +5,7 @@ body{
     -webkit-user-select: none;
     user-select: none;
     overflow-x: hidden;
-    /* background-color: #08002a; */
+    background-color: black;
     /* background: linear-gradient(135deg, #1200da,#de8807, #de04ab); */
 }
 
@@ -15,47 +15,59 @@ body{
     justify-content: center;
     align-items: center;
     margin-bottom: 5vh;
-    /* background: linear-gradient(135deg, #1200da,#de8807, #de04ab); */
-
+    /* background: url(gold.jpg) no-repeat; */
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(0,0,0,1) 60%);
+    background-size: cover;
 }
+
 .text-container{
   display: flex;
   flex-direction: column;
-  align-self: start;
-  margin-top: 15vh;
-  width: 45%;
-  font-size: 5vw;
-  /* color: white; */
+  text-align: center;
+  justify-content: center;
+  margin-top: 5vh;
+  margin-bottom: 7vh;
+  font-size: 4.3vw;
+  color: white;
 }
+
+.smaller-text{
+  /* margin-top: 3vh; */
+  font-size: 2.5vw;
+  color: white;
+}
+
 .tile-container{
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   justify-content: center;
   width: 90%;
   min-height: 65vh;
-  max-height:90vh;
-  margin: 5vh 0 2vh 0;
+  max-height:200vh;
+  margin: 15vh 0 2vh 0;
   padding: 3vw 3vw;
   border-radius: 10px;
-  background: linear-gradient(135deg, rgba(62, 208, 155, 0.7), rgba(59, 123, 208, 0.5), rgba(208, 59, 123, 0.7));
-  box-shadow: #333 0px 0px 5px;
+  /* border-bottom: #0004ff 3px solid; */
 }
 
 .instagram-caption-generator {
-    width: 55%;
+    width: 80%;
     font-family: 'Arial, sans-serif';
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: end; */
+    align-items: end;
   }
   
   .drop-area {
-    border: 2px dashed #2900d9;
-    background: linear-gradient(135deg, #d5cfeb 25%, #e1e1e1 75%);
+    border: 3px solid #0004ff;
+    box-shadow: #0004ff 0px 0px 10px;
     border-radius: 10px;
-    font-size: 1.6vw;
+    font-size: 1.5vw;
+    font-weight: 550;
+    color: #e6e6e6;
     width: 100%;
     height: 40vh;
     max-height: 50vh;
@@ -65,10 +77,17 @@ body{
     text-align: center;
     transition:  0.3s ease-in-out;
     position: relative;
+    /* background: url(bg3.jpg) no-repeat; */
+    background-size: cover;
   }
+
   .drop-area:hover{
     transition:  0.3s ease-in-out;
+    border: 3px solid #ff00dd;
+    box-shadow: #ff00dd 0px 0px 5px;
+    /* color: rgb(255, 0, 230); */
   }
+
   .hasimage{
     border: none;
   }
@@ -98,24 +117,16 @@ body{
   .upload-button {
     display: inline-block;
     padding: 13px 20px;
-    font-size: 18px;
-    color: black;
-    background-color: rgba(62, 208, 155, 0.7);
-    border: none;
+    font-size: 16px;
+    border: #959595 solid 3px;
     border-radius: 25px;
     cursor: pointer;
-    transition:  0.3s ease-in-out;
   }
   
   .upload-button input {
     display: none;
   }
-  
-  .upload-button:hover {
-    background-color: rgb(214, 255, 214);
-    transition:  0.3s ease-in-out;
-  }
-  
+
   .cross-button{
     position: absolute;
     display: flex;
@@ -134,7 +145,9 @@ body{
   textarea {
     width: 100%;
     padding: 2vh;
+    background: rgb(240, 240, 240);
     border: 2px solid #ccc;
+    color: white;
     border-radius: 10px;
     margin: 15px 0;
     box-sizing: border-box;
@@ -144,8 +157,10 @@ body{
   }
   
   textarea:focus {
-    border-color: #333;
+    border-color: #0003ae;
     outline: none;
+    color: black;
+    background-color: white;
   }
   
   button {
@@ -153,7 +168,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2vh 1vw;
+    padding: 2vh 1.5vw;
     font-size: 18px;
     color: #fff;
     background-color: rgb(68, 53, 230);
@@ -172,26 +187,99 @@ body{
     background-color: #6120db;
     transition:  0.3s ease-in-out;
   }
-  
-  .instagram-post {
-    margin-top: 20px;
-    text-align: center;
+
+  .ig-post-container {
+    max-height: 140vh;
+    width: 72vw;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    margin: 5vh auto;
+    background-color: #000000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
-  
-  .instagram-post img {
-    max-width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  .post-title{
+    font-size: 2vw;
+    color: #fff;
+    margin: 3vh 10vw 0 1vw;
   }
-  
-  .instagram-post p {
-    font-size: 18px;
-    font-style: italic;
-    color: #333;
-    margin-top: 10px;
+
+  .post-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     padding: 10px;
-    background: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #dcdcdc;
+  }
+
+  .three-dots {
+    cursor: pointer;
+    color: #555;
+    margin-right: 1vw;
   }
   
+  .ig-post {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 5vh auto;
+    width: 47%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fefefe;
+  }
+  
+  .ig-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #dcdcdc;
+  }
+  
+  .ig-image-container img {
+    width: 100%;
+  }
+  
+  .symbols {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 97%;
+    padding-top: 10px;
+  }
+  
+  .symbols div {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .ig-caption {
+    width: 100%;
+    padding: 10px;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 2vh;
+    margin-left: 1vw;
+    font-size: larger;
+  }
+  
+  .symbols .like, .symbols .comment, .symbols .send, .symbols .bookmark {
+    cursor: pointer;
+    font-size: 22px;
+    /* color: #555; */
+  }
+  .profile-pic{
+    margin-left: 0.8vw;
+    margin-top: 1vh;
+    font-size: 35px;
+    color: rgb(227, 0, 215);
+  }
