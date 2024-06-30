@@ -10,7 +10,7 @@ import { FaRegBookmark } from "react-icons/fa6";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaInstagram } from "react-icons/fa";
 import AOS from 'aos';
-import axios from 'axios';
+// import axios from 'axios';
 import 'aos/dist/aos.css';
 import TypingText from './TypingText';
   
