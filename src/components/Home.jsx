@@ -69,7 +69,10 @@ const Home = () => {
       //   const data = await response.json();
       //   setCaption(response.data['caption'])
       //   setSuggestions(response.data['suggestions'])
-        setCaption("Scene of beauty");
+        setTimeout(() => {
+          setCaption("Living life one moment at a time ✨ #GoodVibesOnly");
+      }, 2000);
+        
       } catch (error) {
         console.error('Error generating caption:', error);
         alert('Failed to generate caption. Please try again.');
