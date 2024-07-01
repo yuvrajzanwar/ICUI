@@ -5,7 +5,7 @@ import {useNavigate} from 'react-router-dom'
 const Navbar = () => {
     const navigate = useNavigate();
     const handleAbout = () => {
-        navigate('/about')
+        window.open('https://www.yuvrajnz.in', '_blank');
     }
   return (
     <>
